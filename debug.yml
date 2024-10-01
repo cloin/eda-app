@@ -1,0 +1,9 @@
+---
+- name: Debug event playbook
+  hosts: localhost
+  connection: local
+  tasks:
+
+  - name: Debug event
+    ansible.builtin.debug:
+      var: ansible_eda
