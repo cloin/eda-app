@@ -8,6 +8,6 @@
         port: 5005
   rules:
     - name: App repo push event
-      condition: event.payload.repository.full_name == "cloin/eda-app"
+      condition: event.payload.repository.name == "eda-app"
       action:
         debug:
