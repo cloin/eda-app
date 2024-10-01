@@ -5,7 +5,7 @@
   become: true
   vars:
     # red, green, blue, ansiblue, pink, darkblue
-    color:          "red"
+    color:          "blue"
 
     # these vars are populated based on gitea eavents
     # if the incoming git event is that of a pull request,
