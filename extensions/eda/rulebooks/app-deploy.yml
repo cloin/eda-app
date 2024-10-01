@@ -15,4 +15,6 @@
     - name: DEBUG
       condition: event.meta is defined
       action:
-        debug:
+        run_job_template:
+          name: "{{ job_template_name }}"
+          organization: Default
