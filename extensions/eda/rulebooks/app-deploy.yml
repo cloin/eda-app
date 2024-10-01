@@ -15,11 +15,13 @@
     - name: App repo push event
       condition: event.payload is search("eda-app",ignorecase=true)
       action:
-        debug:
+        run_job_template:
+          name: "{{ job_template_name_1 }}"
+          organization: Default
 
     - name: DEBUG
       condition: event.meta is defined
       action:
         run_job_template:
-          name: "{{ job_template_name }}"
+          name: "{{ job_template_name_2 }}"
           organization: Default
