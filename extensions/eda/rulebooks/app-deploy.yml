@@ -8,7 +8,7 @@
         port: 5005
   rules:
     - name: App repo push event
-      condition: event.payload.repository.name == "eda-app"
+      condition: event.payload.payload.repository.name == "eda-app"
       action:
         debug:
 
