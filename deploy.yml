@@ -16,8 +16,8 @@
     # if the incoming git event is that of a pull request,
     # set the name of the container to reflect a dev deployment
     container_name: "{{ 'colors-dev' if ansible_eda.event.etype == 'pull_request' else 'colors' }}"
-    repo_pusher:    "{{ ansible_eda.event.eauthor }}"
-    repo_ref:       "{{ ansible_eda.event.eref }}"
+    repo_pusher: "{{ ansible_eda.event.eauthor | default('none') }}"
+    repo_ref:    "{{ ansible_eda.event.eref | default('none') }}"
     
   tasks:
     - name: Podman install
