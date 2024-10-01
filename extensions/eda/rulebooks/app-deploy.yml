@@ -11,3 +11,8 @@
       condition: event.payload.repository.name == "eda-app"
       action:
         debug:
+
+    - name: DEBUG
+      condition: event.meta is defined
+      action:
+        debug:
