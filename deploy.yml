@@ -10,7 +10,8 @@
     # these vars are populated based on gitea eavents
     # if the incoming git event is that of a pull request,
     # set the port to 8081 to simulate deployment in dev
-    host_port:      "{{ '8081' if ansible_eda.event.etype == 'pull_request' else '8080'}}"
+    # host_port:      "{{ '8081' if ansible_eda.event.etype == 'pull_request' else '8080'}}"
+    host_port: "{{ '8081' if (ansible_eda.event.etype | default('')) == 'pull_request' else '8080' }}"
     # app runs on 8080 so don't change unless app.py modified and image pushed
     container_port: 8080
     # if the incoming git event is that of a pull request,
